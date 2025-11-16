@@ -1,16 +1,15 @@
 import sys
 
-if len(sys.argv) == 4:
+if len(sys.argv) == 2:
     script_name = sys.argv[0]
-    principal = float(sys.argv[1])
-    rate = float(sys.argv[2])
-    time = float(sys.argv[3])
+    text = sys.argv[1]
 else:
     script_name = sys.argv[0]
-    principal = 1000.0
-    rate = 5.0
-    time = 2.0
+    text = "Madam"
 
-simple_interest = (principal * rate * time) / 100
+cleaned_text = ''.join(char.lower() for char in text if char.isalnum())
 
-print(f"Simple Interest = {simple_interest:.2f}")
+if cleaned_text == cleaned_text[::-1]:
+    print("Palindrome")
+else:
+    print("Not a palindrome")
