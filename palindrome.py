@@ -3,9 +3,11 @@ import sys
 if len(sys.argv) == 2:
     script_name = sys.argv[0]
     text = sys.argv[1]
+    print("User provided input")
 else:
     script_name = sys.argv[0]
     text = "Madam"
+    print("Default input")
 
 cleaned_text = ''.join(char.lower() for char in text if char.isalnum())
 
